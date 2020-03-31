@@ -6,15 +6,21 @@ class Premios {
     this.posicionX = posicionX;
     this.posicionY = posicionY;
   }
+
   static EliminarPremio(contenedor, id) {
     contenedor.removeChild(document.getElementById(`${id}`));
   }
+
   // Crear metodo
   CrearImagen(contenedor) {
     const imagen = document.createElement("img");
     imagen.src = "./../assets/popo.jpeg";
     imagen.style.width = "50px";
-    imagen.id = `image${Math.random().toString().split(".")[1]}`;
+    imagen.id = `image${
+      Math.random()
+        .toString()
+        .split(".")[1]
+    }`;
 
     const styleLeft = this.posicionX - sizeMargin;
     const styleTop = this.posicionY;

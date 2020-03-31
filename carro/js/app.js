@@ -1,20 +1,17 @@
 const imagen = document.getElementById("Carro");
 let sizeMargin = 0;
 // let sizeMarginBottom = 0;
-
 const carro = new Car(0, 0);
-
 let posicionImagenes = [];
-
 let contenedor = document.getElementById("contenedor");
-
+let acumulador = 0;
+const puntos = document.getElementById("Puntos");
 eventListener();
 
 function eventListener() {
   document.addEventListener("keydown", moveCar);
   contenedor.addEventListener("click", AddPrize);
   window.addEventListener("resize", ObtenerMargin);
-  ObtenerMargin();
 }
 
 function moveCar(event) {
@@ -25,6 +22,9 @@ function moveCar(event) {
   if (response != null) {
     Premios.EliminarPremio(contenedor, posicionImagenes[response].id);
     posicionImagenes.splice(response, 1);
+    acumulador++;
+    console.log(acumulador);
+    puntos.innerText = acumulador;
   }
 }
 
@@ -32,13 +32,8 @@ function AddPrize(event) {
   //   console.log(event);
   ObtenerMargin();
   const prize = new Premios(event.x, event.y);
-  prize.CrearImagen(contenedor);
-  
-  prize.CrearImagen(contenedor, sizeMargin);
-
   posicionImagenes.push(prize.CrearImagen(contenedor, sizeMargin));
-
-  console.log(posicionImagenes);
+  // console.log(posicionImagenes);
   // console.log(prize.CrearImagen(contenedor, sizeMargin));
 }
 
@@ -65,6 +60,6 @@ function ObtenerMargin() {
   // console.log(typeof MarginContainer);
   // console.log(MarginLeftSize);
 
-  console.log(sizeMargin);
+  // console.log(sizeMargin);
   // console.log(sizeMarginBottom);
 }

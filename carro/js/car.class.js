@@ -37,7 +37,7 @@ class Car {
   }
 
   verificarColision(PosicionesCaquitas = []) {
-    console.log(this.posicionX, this.posicionY);
+    // console.log(this.posicionX, this.posicionY);
     for (let i = 0; i < PosicionesCaquitas.length; i++) {
       if (
         this.posicionX >= PosicionesCaquitas[i].styleLeft &&
@@ -45,9 +45,8 @@ class Car {
         this.posicionY >= PosicionesCaquitas[i].styleTop &&
         this.posicionY <= PosicionesCaquitas[i].styleTopMax
       ) {
-        return i;
         // console.log("tocando caquita");
-        // console.log(i);
+        return i;
         // console.log(PosicionesCaquitas[i]);
       }
     }
