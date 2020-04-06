@@ -1,0 +1,12 @@
+@import url(//db.onlinewebfonts.com/c/0d78b12d6be09203d1fbeb76871a369a?family=Century+Gothic);
+#txtList{
+    resize: none;
+}
+body{
+font-family: Century Gothic;
+color: rgb(72, 255, 0);
+}
+
+.jumbotron{
+    background: black;
+}
